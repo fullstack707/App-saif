@@ -43,7 +43,7 @@ function AddPersonalBankAccountPage() {
                 break;
         }
     }, [topMostCentralPane]);
-//Testing
+
     const submitBankAccountForm = useCallback(() => {
         const bankAccounts = plaidData?.bankAccounts ?? [];
         const selectedPlaidBankAccount = bankAccounts.find((bankAccount) => bankAccount.plaidAccountID === selectedPlaidAccountId);

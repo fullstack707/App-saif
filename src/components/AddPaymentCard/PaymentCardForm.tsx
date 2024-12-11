@@ -144,36 +144,36 @@ function PaymentCardForm({
 
     const validate = (values: FormOnyxValues<typeof ONYXKEYS.FORMS.ADD_PAYMENT_CARD_FORM>): FormInputErrors<typeof ONYXKEYS.FORMS.ADD_PAYMENT_CARD_FORM> => {
         const errors = ValidationUtils.getFieldRequiredErrors(values, REQUIRED_FIELDS);
-    
+
         if (values.nameOnCard && !ValidationUtils.isValidLegalName(values.nameOnCard)) {
             errors.nameOnCard = translate(label.error.nameOnCard);
         }
-    
+
         if (values.cardNumber && !ValidationUtils.isValidDebitCard(values.cardNumber.replace(/ /g, ''))) {
             errors.cardNumber = translate(label.error.cardNumber);
         }
-    
+
         if (values.expirationDate && !ValidationUtils.isValidExpirationDate(values.expirationDate)) {
             errors.expirationDate = translate(label.error.expirationDate);
         }
-    
+
         if (values.securityCode && !ValidationUtils.isValidSecurityCode(values.securityCode)) {
             errors.securityCode = translate(label.error.securityCode);
         }
-    
+
         if (values.addressStreet && !ValidationUtils.isValidAddress(values.addressStreet)) {
             errors.addressStreet = translate(label.error.addressStreet);
         }
-    
+
         if (values.addressZipCode && !/^\d{5}(-\d{4})?$/.test(values.addressZipCode)) {
             // Validate ZIP code (5-digit or 9-digit ZIP format)
             errors.addressZipCode = translate(label.error.addressZipCode);
         }
-    
+
         if (!values.acceptTerms) {
             errors.acceptTerms = translate('common.error.acceptTerms');
         }
-    
+
         return errors;
     };
 
