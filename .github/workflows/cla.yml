@@ -12,5 +12,5 @@ jobs:
         uses: cla-assistant/github-action@v1
         with:
           token: ${{ secrets.PAT }}  
-          claUrl: https://cla-assistant.io/my-cla 
+          claUrl: https://cla-assistant.io/fullstack707/App-saif 
           repo: ${{ github.repository }} 
