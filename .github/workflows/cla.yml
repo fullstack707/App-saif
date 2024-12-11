@@ -11,6 +11,18 @@ jobs:
       - name: CLA Assistant Action
         uses: cla-assistant/github-action@v1
         with:
-          token: ${{ secrets.PAT }}  
-          claUrl: https://cla-assistant.io/fullstack707/App-saif 
-          repo: ${{ github.repository }} 
+          token: ${{ secrets.GITHUB_TOKEN }}  
+          claUrl: https://cla-assistant.io/fullstack707/App-saif
+          repo: ${{ github.repository }}
+          path-to-signatures: fullstack707/App-saif/cla.json
+          path-to-document: https://github.com/fullstack707/App-saif/blob/main/CLA.md
+          branch: main
+          remote-organization-name: Expensify
+          remote-repository-name: CLA
+          lock-pullrequest-aftermerge: false
+          allowlist: snyk-bot,OSBotify,os-botify[bot],imgbot[bot]
+          use-dco-flag: false
+          suggest-recheck: true
+        env:
+          PERSONAL_ACCESS_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+
