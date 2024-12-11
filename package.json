@@ -274,7 +274,7 @@
     "dotenv": "^16.0.3",
     "electron": "^32.2.3",
     "electron-builder": "25.0.0",
-    "eslint": "^8.57.0",
+    "eslint": "^8.57.1",
     "eslint-config-airbnb-typescript": "^18.0.0",
     "eslint-config-expensify": "^2.0.74",
     "eslint-config-prettier": "^9.1.0",
